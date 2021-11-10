@@ -40,6 +40,50 @@ type Player struct {
 	XboxMaxPrice int `json:"xbox_MaxPrice"`
 }
 
+func (p Player) Price(platform string) int {
+	switch platform {
+	case "PC":
+		return p.PcPrice
+	case "XB":
+		return p.XboxPrice
+	default:
+		return p.PsPrice
+	}
+}
+
+func (p Player) MinPrice(platform string) int {
+	switch platform {
+	case "PC":
+		return p.PcMinPrice
+	case "XB":
+		return p.XboxMinPrice
+	default:
+		return p.PsMinPrice
+	}
+}
+
+func (p Player) MaxPrice(platform string) int {
+	switch platform {
+	case "PC":
+		return p.PcMaxPrice
+	case "XB":
+		return p.XboxMaxPrice
+	default:
+		return p.PsMaxPrice
+	}
+}
+
+func (p Player) PRP(platform string) int {
+	switch platform {
+	case "PC":
+		return p.PcPRP
+	case "XB":
+		return p.XboxPRP
+	default:
+		return p.PsPRP
+	}
+}
+
 type playersData struct {
 	Players []Player `json:"data"`
 }

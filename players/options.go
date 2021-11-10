@@ -1,6 +1,6 @@
 package players
 
-type PlayerOptions struct {
+type Options struct {
 	Platform string `url:"platform,omitempty"`
 
 	Page  int    `url:"page,omitempty"`
@@ -10,9 +10,9 @@ type PlayerOptions struct {
 	Version string `url:"version,omitempty"`
 
 	Position    []Position `url:"position,omitempty"`
-	NationId    int        `url:"nation,omitempty"`
-	LeagueId    int        `url:"league,omitempty"`
-	ClubId      int        `url:"club,omitempty"`
+	NationID    int        `url:"nation,omitempty"`
+	LeagueID    int        `url:"league,omitempty"`
+	ClubID      int        `url:"club,omitempty"`
 	WeakFoot    int        `url:"wf,omitempty"`
 	MinWeakFoot int        `url:"min_wf,omitempty"`
 	MaxWeakFoot int        `url:"max_wf,omitempty"`

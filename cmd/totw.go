@@ -7,7 +7,7 @@ import (
 // totwCmd represents the totw command
 var totwCmd = &cobra.Command{
 	Use:     "totw",
-	Short:   "List the players of the current TOTW",
+	Short:   "Current TOTW players",
 	Example: "futbin totw",
 	Run: func(cmd *cobra.Command, args []string) {
 		p, err := playersClient.TOTW()

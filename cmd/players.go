@@ -22,7 +22,7 @@ var (
 // playersCmd represents the players command
 var playersCmd = &cobra.Command{
 	Use:   "players",
-	Short: "List players",
+	Short: "Players",
 	Run: func(cmd *cobra.Command, args []string) {
 		p, err := playersClient.Get(&players.Options{
 			Platform: platform,

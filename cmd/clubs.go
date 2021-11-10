@@ -10,7 +10,7 @@ import (
 // clubsCmd represents the clubs command
 var clubsCmd = &cobra.Command{
 	Use:     "clubs",
-	Short:   "List clubs",
+	Short:   "Clubs",
 	Example: "futbin clubs --league 13",
 	Run: func(cmd *cobra.Command, args []string) {
 		leagues, err := leaguesAndClubsClient.Get()

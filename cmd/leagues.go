@@ -12,7 +12,7 @@ var leaguesAndClubsClient = leagueclubs.DefaultClient()
 // leaguesCmd represents the leagues command
 var leaguesCmd = &cobra.Command{
 	Use:   "leagues",
-	Short: "List leagues",
+	Short: "Leagues",
 	Long:  `futbin leagues`,
 	Run: func(cmd *cobra.Command, args []string) {
 		leagues, err := leaguesAndClubsClient.Get()

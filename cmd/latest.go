@@ -7,7 +7,7 @@ import (
 // latestCmd represents the latest command
 var latestCmd = &cobra.Command{
 	Use:     "latest",
-	Short:   "Latest added players",
+	Short:   "latest added players",
 	Example: "futbin latest",
 	Run: func(cmd *cobra.Command, args []string) {
 		p, err := playersClient.Latest()

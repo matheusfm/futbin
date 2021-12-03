@@ -10,7 +10,7 @@ import (
 // nationsCmd represents the nations command
 var nationsCmd = &cobra.Command{
 	Use:     "nations",
-	Short:   "Nations",
+	Short:   "nations",
 	Example: "futbin nations",
 	Run: func(cmd *cobra.Command, args []string) {
 		data := make([][]string, len(nations.Nations))

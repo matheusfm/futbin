@@ -5,6 +5,7 @@ import (
 	"strconv"
 
 	"github.com/dustin/go-humanize"
+	"github.com/fatih/color"
 	"github.com/matheusfm/futbin/nations"
 	"github.com/matheusfm/futbin/players"
 	"github.com/spf13/cobra"
@@ -22,7 +23,11 @@ var (
 // playersCmd represents the players command
 var playersCmd = &cobra.Command{
 	Use:   "players",
-	Short: "Players",
+	Short: "players",
+	Example: `1.  # Brazilian players in LaLiga:
+    futbin players --nation 54 --league 53
+2.  # OTW players (see options in 'futbin cardversions' command):
+    futbin players --version otw`,
 	Run: func(cmd *cobra.Command, args []string) {
 		p, err := playersClient.Get(&players.Options{
 			Platform: platform,
@@ -35,6 +40,16 @@ var playersCmd = &cobra.Command{
 		cobra.CheckErr(err)
 		printPlayers(p)
 	},
+}
+
+func init() {
+	rootCmd.AddCommand(playersCmd)
+
+	playersCmd.PersistentFlags().IntVar(&fPage, "page", 1, "page")
+	playersCmd.PersistentFlags().StringVar(&fVersion, "version", "", "card version")
+	playersCmd.PersistentFlags().IntVar(&fClubID, "club", 0, "club ID")
+	playersCmd.PersistentFlags().IntVar(&fNationID, "nation", 0, "nation ID")
+	playersCmd.PersistentFlags().IntVar(&fLeagueID, "league", 0, "league ID")
 }
 
 func printPlayers(p []players.Player) {
@@ -65,23 +80,23 @@ func printPlayers(p []players.Player) {
 			fmt.Sprintf("%s (%d)", player.League, player.LeagueID),
 			player.Position,
 			humanize.Comma(int64(player.Price(platform))),
-			strconv.Itoa(player.Pace),
-			strconv.Itoa(player.Shooting),
-			strconv.Itoa(player.Passing),
-			strconv.Itoa(player.Dribbling),
-			strconv.Itoa(player.Defending),
-			strconv.Itoa(player.Physicality),
+			colorStat(player.Pace),
+			colorStat(player.Shooting),
+			colorStat(player.Passing),
+			colorStat(player.Dribbling),
+			colorStat(player.Defending),
+			colorStat(player.Physicality),
 		}
 	}
 	printTable(header, data)
 }
 
-func init() {
-	rootCmd.AddCommand(playersCmd)
-
-	playersCmd.PersistentFlags().IntVar(&fPage, "page", 1, "page")
-	playersCmd.PersistentFlags().StringVar(&fVersion, "version", "", "card version")
-	playersCmd.PersistentFlags().IntVar(&fClubID, "club", 0, "club ID")
-	playersCmd.PersistentFlags().IntVar(&fNationID, "nation", 0, "nation ID")
-	playersCmd.PersistentFlags().IntVar(&fLeagueID, "league", 0, "league ID")
+func colorStat(stat int) string {
+	if stat <= 50 {
+		return color.RedString("%d", stat)
+	}
+	if stat <= 70 {
+		return color.YellowString("%d", stat)
+	}
+	return color.GreenString("%d", stat)
 }

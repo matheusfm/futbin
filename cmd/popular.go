@@ -7,7 +7,7 @@ import (
 // popularCmd represents the popular command
 var popularCmd = &cobra.Command{
 	Use:   "popular",
-	Short: "Popular players",
+	Short: "popular players",
 	Run: func(cmd *cobra.Command, args []string) {
 		p, err := playersClient.Popular()
 		cobra.CheckErr(err)

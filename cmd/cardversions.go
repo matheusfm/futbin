@@ -10,7 +10,7 @@ var cardversionsClient = cardversions.DefaultClient()
 // cardversionsCmd represents the cardversions command
 var cardversionsCmd = &cobra.Command{
 	Use:     "cardversions",
-	Short:   "Card versions",
+	Short:   "card versions",
 	Example: "futbin cardversions",
 	Run: func(cmd *cobra.Command, args []string) {
 		cv, err := cardversionsClient.Get()

@@ -13,7 +13,7 @@ Get them [here](https://github.com/matheusfm/futbin/releases).
 You need `go` installed and `GOBIN` in your `PATH`. Once that is done, run the command:
 
 ```shell
-go install github.com/matheusfm/futbin
+go install github.com/matheusfm/futbin@latest
 ```
 
 # Usage

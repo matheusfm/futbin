@@ -19,6 +19,8 @@ go install github.com/matheusfm/futbin@latest
 
 # Usage
 
+[![asciicast](https://asciinema.org/a/456565.svg)](https://asciinema.org/a/456565)
+
 ```
 Usage:
   futbin [command]

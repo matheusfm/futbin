@@ -17,9 +17,7 @@ var clubsCmd = &cobra.Command{
 		cobra.CheckErr(err)
 		data := make([][]string, 1)
 		for _, league := range leagues {
-			// 0 -> percorre e adiciona
-			//
-			if fLeagueID != 0 && fLeagueID != league.ID {
+			if flagLeagueID != 0 && flagLeagueID != league.ID {
 				continue
 			}
 			for _, club := range league.Clubs {
@@ -41,5 +39,5 @@ var clubsCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(clubsCmd)
-	clubsCmd.PersistentFlags().IntVar(&fLeagueID, "league", 0, "league ID")
+	clubsCmd.PersistentFlags().IntVar(&flagLeagueID, "league", 0, "League ID")
 }

@@ -29,7 +29,8 @@ type client struct {
 
 func (c client) Get(opt *Options) ([]Player, error) {
 	u, _ := url.Parse("https://www.futbin.org/futbin/api/getFilteredPlayers")
-	q, err := query.Values(opt)
+	pq := newPlayerQuery(opt)
+	q, err := query.Values(pq)
 	if err != nil {
 		return nil, err
 	}

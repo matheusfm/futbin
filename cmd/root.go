@@ -27,8 +27,8 @@ func Execute() {
 
 func init() {
 	cobra.OnInitialize(initConfig)
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.futbin.yaml)")
-	rootCmd.PersistentFlags().StringVar(&platform, "platform", "PS", "platform (PS, XB or PC)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "Config file (default is $HOME/.futbin.yaml)")
+	rootCmd.PersistentFlags().StringVar(&platform, "platform", "PS", "Platform (PS, XB or PC)")
 	viper.BindPFlag("platform", rootCmd.PersistentFlags().Lookup("platform"))
 }
 

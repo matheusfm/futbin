@@ -19,8 +19,6 @@ go install github.com/matheusfm/futbin@latest
 # Usage
 
 ```
-futbin command line tool
-
 Usage:
   futbin [command]
 
@@ -37,11 +35,80 @@ Available Commands:
   totw         current TOTW players
 
 Flags:
-      --config string     config file (default is $HOME/.futbin.yaml)
+      --config string     Config file (default is $HOME/.futbin.yaml)
   -h, --help              help for futbin
-      --platform string   platform (PS, XB or PC) (default "PS")
+      --platform string   Platform (PS, XB or PC) (default "PS")
 
 Use "futbin [command] --help" for more information about a command.
+```
+
+### `players` command examples:
+
+```
+Usage:
+  futbin players [flags]
+
+Examples:
+1.  # Brazilian players in LaLiga:
+    futbin players --nation 54 --league 53
+2.  # OTW players (see options in 'futbin cardversions' command):
+    futbin players --version otw
+3.  # Brazilian players with more than 90 of passing:
+    futbin players --nation 54 --passing 90-
+4.  # Icons with a maximum price of 300K:
+    futbin players --league 2118 --price -300000
+5.  # Players with 5 weak foot and 5 skills:
+    futbin players --wf 5 --skills 5
+
+Flags:
+      --acceleration string         Acceleration
+      --aggression string           Aggression
+      --agility string              Agility
+      --balance string              Balance
+      --ball-control string         Ball Control
+      --club int                    Club ID
+      --composure string            Composure
+      --crossing string             Crossing
+      --curve string                Curve
+      --defending string            Defending
+      --dribbling string            Dribbling
+      --finishing string            Finishing
+      --free-kick-accuracy string   Free Kick Accuracy
+      --heading-accuracy string     Heading Accuracy
+  -h, --help                        help for players
+      --interceptions string        Interceptions
+      --jumping string              Jumping
+      --league int                  League ID
+      --long-passing string         Long Passing
+      --long-shots string           Long Shots
+      --marking string              Marking
+      --nation int                  Nation ID
+      --ovr string                  Rating
+      --pace string                 Pace
+      --page int                    Page (default 1)
+      --passing string              Passing
+      --penalties string            Penalties
+      --physicality string          Physicality
+      --positioning string          Positioning
+      --price string                Price
+      --reactions string            Reactions
+      --shooting string             Shooting
+      --short-passing string        Short Passing
+      --shot-power string           Shot Power
+      --skills string               Skills
+      --sliding-tackle string       Sliding Tackle
+      --sprint-speed string         Sprint Speed
+      --stamina string              Stamina
+      --standing-tackle string      Standing Tackle
+      --strength string             Strength
+      --version string              Card version
+      --vision string               Vision
+      --volleys string              Volleys
+      --wf string                   Weak Foot
+
+Global Flags:
+      --config string     Config file (default is $HOME/.futbin.yaml)
+      --platform string   Platform (PS, XB or PC) (default "PS")
 ```
 
 ## Usage (Library)

@@ -1,4 +1,5 @@
 # futbin
+[![goreleaser](https://github.com/matheusfm/futbin/actions/workflows/release.yml/badge.svg)](https://github.com/matheusfm/futbin/actions/workflows/release.yml)
 
 An unofficial command line utility for [futbin](https://www.futbin.com/). Also, it can be used as a library.
 

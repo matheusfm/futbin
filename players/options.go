@@ -9,7 +9,7 @@ type Options struct {
 
 	Version string
 
-	Position []Position
+	Position []string
 	NationID int
 	LeagueID int
 	ClubID   int

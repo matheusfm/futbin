@@ -19,6 +19,7 @@ var (
 	flagClubID           int
 	flagNationID         int
 	flagLeagueID         int
+	flagPosition         []string
 	flagPrice            string
 	flagWeakFoot         string
 	flagSkills           string
@@ -81,6 +82,7 @@ var playersCmd = &cobra.Command{
 			ClubID:           flagClubID,
 			NationID:         flagNationID,
 			LeagueID:         flagLeagueID,
+			Position:         flagPosition,
 			Price:            flagToRange(flagPrice),
 			WeakFoot:         flagToRange(flagWeakFoot),
 			Skills:           flagToRange(flagSkills),
@@ -136,6 +138,7 @@ func init() {
 	playersCmd.PersistentFlags().StringVar(&flagSkills, "skills", "", "Skills")
 	playersCmd.PersistentFlags().StringVar(&flagRating, "ovr", "", "Rating")
 	playersCmd.PersistentFlags().StringVar(&flagPrice, "price", "", "Price")
+	playersCmd.PersistentFlags().StringSliceVar(&flagPosition, "position", []string{}, "Position")
 	playersCmd.PersistentFlags().StringVar(&flagPace, "pace", "", "Pace")
 	playersCmd.PersistentFlags().StringVar(&flagAcceleration, "acceleration", "", "Acceleration")
 	playersCmd.PersistentFlags().StringVar(&flagSprintSpeed, "sprint-speed", "", "Sprint Speed")

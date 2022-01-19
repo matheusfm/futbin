@@ -11,23 +11,23 @@ type playerQuery struct {
 
 	Version string `url:"version,omitempty"`
 
-	Position    []Position `url:"position,omitempty"`
-	NationID    int        `url:"nation,omitempty"`
-	LeagueID    int        `url:"league,omitempty"`
-	ClubID      int        `url:"club,omitempty"`
-	WeakFoot    int        `url:"wf,omitempty"`
-	MinWeakFoot int        `url:"min_wf,omitempty"`
-	MaxWeakFoot int        `url:"max_wf,omitempty"`
-	Skills      int        `url:"skills,omitempty"`
-	MinSkills   int        `url:"min_skills,omitempty"`
-	MaxSkills   int        `url:"max_skills,omitempty"`
-	Foot        Foot       `url:"foot,omitempty"`
-	PsPrice     string     `url:"ps4price,omitempty"`
-	XboxPrice   string     `url:"xb1price,omitempty"`
-	PcPrice     string     `url:"pcprice,omitempty"`
-	Rating      string     `url:"rating,omitempty"`
-	Height      string     `url:"height,omitempty"`
-	Weight      string     `url:"weight,omitempty"`
+	Position    []string `url:"position,comma,omitempty"`
+	NationID    int      `url:"nation,omitempty"`
+	LeagueID    int      `url:"league,omitempty"`
+	ClubID      int      `url:"club,omitempty"`
+	WeakFoot    int      `url:"wf,omitempty"`
+	MinWeakFoot int      `url:"min_wf,omitempty"`
+	MaxWeakFoot int      `url:"max_wf,omitempty"`
+	Skills      int      `url:"skills,omitempty"`
+	MinSkills   int      `url:"min_skills,omitempty"`
+	MaxSkills   int      `url:"max_skills,omitempty"`
+	Foot        Foot     `url:"foot,omitempty"`
+	PsPrice     string   `url:"ps4price,omitempty"`
+	XboxPrice   string   `url:"xb1price,omitempty"`
+	PcPrice     string   `url:"pcprice,omitempty"`
+	Rating      string   `url:"rating,omitempty"`
+	Height      string   `url:"height,omitempty"`
+	Weight      string   `url:"weight,omitempty"`
 
 	Pace             string `url:"Pace,omitempty"`
 	Acceleration     string `url:"Acceleration,omitempty"`

@@ -28,7 +28,7 @@ type client struct {
 }
 
 func (c client) Get(opt *Options) ([]Player, error) {
-	u, _ := url.Parse("https://www.futbin.org/futbin/api/getFilteredPlayers")
+	u, _ := url.Parse("https://www.futbin.org/futbin/api/23/getFilteredPlayers")
 	pq := newPlayerQuery(opt)
 	q, err := query.Values(pq)
 	if err != nil {
@@ -39,15 +39,15 @@ func (c client) Get(opt *Options) ([]Player, error) {
 }
 
 func (c client) TOTW() ([]Player, error) {
-	return c.get("https://www.futbin.org/futbin/api/currentTOTW")
+	return c.get("https://www.futbin.org/futbin/api/23/currentTOTW")
 }
 
 func (c client) Popular() ([]Player, error) {
-	return c.get("https://www.futbin.org/futbin/api/getPopularPlayers")
+	return c.get("https://www.futbin.org/futbin/api/23/getPopularPlayers")
 }
 
 func (c client) Latest() ([]Player, error) {
-	return c.get("https://www.futbin.org/futbin/api/newPlayers")
+	return c.get("https://www.futbin.org/futbin/api/23/newPlayers")
 }
 
 func (c client) get(url string) ([]Player, error) {

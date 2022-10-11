@@ -62,8 +62,11 @@ Examples:
     futbin players --league 2118 --price -300000
 5.  # Players with 5 weak foot and 5 skills:
     futbin players --wf 5 --skills 5
+6.  # Players with Lengthy AcceleRATE:
+    futbin players --accelerate=lengthy
 
 Flags:
+      --accelerate string           Accelerate
       --acceleration string         Acceleration
       --aggression string           Aggression
       --agility string              Agility
@@ -92,6 +95,7 @@ Flags:
       --passing string              Passing
       --penalties string            Penalties
       --physicality string          Physicality
+      --position strings            Position
       --positioning string          Positioning
       --price string                Price
       --reactions string            Reactions

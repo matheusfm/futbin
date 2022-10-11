@@ -7,7 +7,6 @@ import (
 
 	"github.com/dustin/go-humanize"
 	"github.com/fatih/color"
-	"github.com/matheusfm/futbin/nations"
 	"github.com/matheusfm/futbin/players"
 	"github.com/spf13/cobra"
 )
@@ -20,6 +19,7 @@ var (
 	flagNationID         int
 	flagLeagueID         int
 	flagPosition         []string
+	flagAccelerate       string
 	flagPrice            string
 	flagWeakFoot         string
 	flagSkills           string
@@ -73,7 +73,9 @@ var playersCmd = &cobra.Command{
 4.  # Icons with a maximum price of 300K:
     futbin players --league 2118 --price -300000
 5.  # Players with 5 weak foot and 5 skills:
-    futbin players --wf 5 --skills 5`,
+    futbin players --wf 5 --skills 5
+6.  # Players with Lengthy AcceleRATE:
+    futbin players --accelerate=lengthy`,
 	Run: func(cmd *cobra.Command, args []string) {
 		p, err := playersClient.Get(&players.Options{
 			Platform:         platform,
@@ -83,6 +85,7 @@ var playersCmd = &cobra.Command{
 			NationID:         flagNationID,
 			LeagueID:         flagLeagueID,
 			Position:         flagPosition,
+			Accelerate:       flagAccelerate,
 			Price:            flagToRange(flagPrice),
 			WeakFoot:         flagToRange(flagWeakFoot),
 			Skills:           flagToRange(flagSkills),
@@ -123,7 +126,7 @@ var playersCmd = &cobra.Command{
 			Aggression:       flagToRange(flagAggression),
 		})
 		cobra.CheckErr(err)
-		printPlayers(p)
+		printPlayers(p, true, true)
 	},
 }
 
@@ -139,6 +142,7 @@ func init() {
 	playersCmd.PersistentFlags().StringVar(&flagRating, "ovr", "", "Rating")
 	playersCmd.PersistentFlags().StringVar(&flagPrice, "price", "", "Price")
 	playersCmd.PersistentFlags().StringSliceVar(&flagPosition, "position", []string{}, "Position")
+	playersCmd.PersistentFlags().StringVar(&flagAccelerate, "accelerate", "", "Accelerate")
 	playersCmd.PersistentFlags().StringVar(&flagPace, "pace", "", "Pace")
 	playersCmd.PersistentFlags().StringVar(&flagAcceleration, "acceleration", "", "Acceleration")
 	playersCmd.PersistentFlags().StringVar(&flagSprintSpeed, "sprint-speed", "", "Sprint Speed")
@@ -175,7 +179,11 @@ func init() {
 	playersCmd.PersistentFlags().StringVar(&flagAggression, "aggression", "", "Aggression")
 }
 
-func printPlayers(p []players.Player) {
+func printPlayers(p []players.Player, accelerate, allPositions bool) {
+	a := "ACCELERATE"
+	if !accelerate {
+		a = ""
+	}
 	header := []string{
 		"ID",
 		"NAME",
@@ -184,6 +192,7 @@ func printPlayers(p []players.Player) {
 		"NATION (ID)",
 		"LEAGUE (ID)",
 		"POS",
+		a,
 		fmt.Sprintf("PRICE (%s)", platform),
 		"PAC",
 		"SHO",
@@ -194,14 +203,19 @@ func printPlayers(p []players.Player) {
 	}
 	data := make([][]string, len(p))
 	for i, player := range p {
+		pos := player.MainPosition
+		if allPositions {
+			pos = player.Positions
+		}
 		data[i] = []string{
 			strconv.Itoa(player.ID),
 			player.CommonName,
 			strconv.Itoa(player.Rating),
-			fmt.Sprintf("%s (%d)", player.ClubName, player.ClubID),
-			fmt.Sprintf("%s (%d)", nations.Nations[player.NationID], player.NationID),
+			fmt.Sprintf("%s (%d)", player.Club, player.ClubID),
+			fmt.Sprintf("%s (%d)", player.Nation, player.NationID),
 			fmt.Sprintf("%s (%d)", player.League, player.LeagueID),
-			player.Position,
+			pos,
+			player.Accelerate,
 			color.HiYellowString(humanize.Comma(int64(player.Price(platform)))),
 			colorStat(player.Pace),
 			colorStat(player.Shooting),

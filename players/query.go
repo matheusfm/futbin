@@ -12,6 +12,7 @@ type playerQuery struct {
 	Version string `url:"version,omitempty"`
 
 	Position    []string `url:"position,comma,omitempty"`
+	Accelerate  string   `url:"accelerate,omitempty"`
 	NationID    int      `url:"nation,omitempty"`
 	LeagueID    int      `url:"league,omitempty"`
 	ClubID      int      `url:"club,omitempty"`
@@ -74,6 +75,7 @@ func newPlayerQuery(opt *Options) *playerQuery {
 		Order:       opt.Order,
 		Version:     opt.Version,
 		Position:    opt.Position,
+		Accelerate:  opt.Accelerate,
 		NationID:    opt.NationID,
 		LeagueID:    opt.LeagueID,
 		ClubID:      opt.ClubID,

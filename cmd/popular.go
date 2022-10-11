@@ -11,7 +11,7 @@ var popularCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		p, err := playersClient.Popular()
 		cobra.CheckErr(err)
-		printPlayers(p)
+		printPlayers(p, false, false)
 	},
 }
 

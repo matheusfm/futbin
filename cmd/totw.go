@@ -12,7 +12,7 @@ var totwCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		p, err := playersClient.TOTW()
 		cobra.CheckErr(err)
-		printPlayers(p)
+		printPlayers(p, false, false)
 	},
 }
 

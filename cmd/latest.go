@@ -12,7 +12,7 @@ var latestCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		p, err := playersClient.Latest()
 		cobra.CheckErr(err)
-		printPlayers(p)
+		printPlayers(p, false, false)
 	},
 }
 

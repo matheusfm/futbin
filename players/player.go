@@ -9,9 +9,12 @@ type Player struct {
 	Name       string `json:"playername"`
 	CommonName string `json:"common_name"`
 
-	Position string `json:"position"`
-	Rating   int    `json:"rating"`
-	RareType int    `json:"raretype"`
+	MainPosition string `json:"position"`
+	Positions    string `json:"pos_all"`
+	Accelerate   string `json:"accelerate"`
+
+	Rating   int `json:"rating"`
+	RareType int `json:"raretype"`
 
 	Pace        int `json:"pac"`
 	Shooting    int `json:"sho"`
@@ -21,7 +24,8 @@ type Player struct {
 	Physicality int `json:"phy"`
 
 	ClubID   int    `json:"club"`
-	ClubName string `json:"club_name"`
+	Club     string `json:"club_name"`
+	Nation   string `json:"nation_name"`
 	NationID int    `json:"nation"`
 	LeagueID int    `json:"league"`
 	League   string `json:"league_name"`

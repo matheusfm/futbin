@@ -11,24 +11,25 @@ type playerQuery struct {
 
 	Version string `url:"version,omitempty"`
 
-	Position    []string `url:"position,comma,omitempty"`
-	Accelerate  string   `url:"accelerate,omitempty"`
-	NationID    int      `url:"nation,omitempty"`
-	LeagueID    int      `url:"league,omitempty"`
-	ClubID      int      `url:"club,omitempty"`
-	WeakFoot    int      `url:"wf,omitempty"`
-	MinWeakFoot int      `url:"min_wf,omitempty"`
-	MaxWeakFoot int      `url:"max_wf,omitempty"`
-	Skills      int      `url:"skills,omitempty"`
-	MinSkills   int      `url:"min_skills,omitempty"`
-	MaxSkills   int      `url:"max_skills,omitempty"`
-	Foot        Foot     `url:"foot,omitempty"`
-	PsPrice     string   `url:"ps4price,omitempty"`
-	XboxPrice   string   `url:"xb1price,omitempty"`
-	PcPrice     string   `url:"pcprice,omitempty"`
-	Rating      string   `url:"rating,omitempty"`
-	Height      string   `url:"height,omitempty"`
-	Weight      string   `url:"weight,omitempty"`
+	Position    	[]string `url:"position,comma,omitempty"`
+	PositionType 	string 	 `url:"pos_type,comma,omitempty"`
+	Accelerate  	string   `url:"accelerate,omitempty"`
+	NationID    	int      `url:"nation,omitempty"`
+	LeagueID    	int      `url:"league,omitempty"`
+	ClubID      	int      `url:"club,omitempty"`
+	WeakFoot    	int      `url:"wf,omitempty"`
+	MinWeakFoot 	int      `url:"min_wf,omitempty"`
+	MaxWeakFoot 	int      `url:"max_wf,omitempty"`
+	Skills      	int      `url:"skills,omitempty"`
+	MinSkills   	int      `url:"min_skills,omitempty"`
+	MaxSkills   	int      `url:"max_skills,omitempty"`
+	Foot        	Foot     `url:"foot,omitempty"`
+	PsPrice     	string   `url:"ps4price,omitempty"`
+	XboxPrice   	string   `url:"xb1price,omitempty"`
+	PcPrice     	string   `url:"pcprice,omitempty"`
+	Rating      	string   `url:"rating,omitempty"`
+	Height      	string   `url:"height,omitempty"`
+	Weight      	string   `url:"weight,omitempty"`
 
 	Pace             string `url:"Pace,omitempty"`
 	Acceleration     string `url:"Acceleration,omitempty"`
@@ -75,6 +76,7 @@ func newPlayerQuery(opt *Options) *playerQuery {
 		Order:       opt.Order,
 		Version:     opt.Version,
 		Position:    opt.Position,
+		PositionType: opt.PositionType,
 		Accelerate:  opt.Accelerate,
 		NationID:    opt.NationID,
 		LeagueID:    opt.LeagueID,

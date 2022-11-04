@@ -19,3 +19,9 @@ const (
 	PositionCF  = "CF"
 	PositionST  = "ST"
 )
+
+const (
+	PositionTypeMain = "main"
+	PositionTypeAll  = "all"
+	PositionTypeAlt  = "alt"
+)

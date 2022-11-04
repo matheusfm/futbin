@@ -96,6 +96,7 @@ Flags:
       --penalties string            Penalties
       --physicality string          Physicality
       --position strings            Position
+      --position-type string        Position type (default "all")
       --positioning string          Positioning
       --price string                Price
       --reactions string            Reactions

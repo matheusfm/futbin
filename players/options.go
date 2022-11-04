@@ -9,19 +9,19 @@ type Options struct {
 
 	Version string
 
-	Position   		[]string
-	PositionType	string
-	Accelerate 		string
-	NationID   		int
-	LeagueID   		int
-	ClubID     		int
-	Height     		string
-	Weight     		string
-	WeakFoot   		Range
-	Skills     		Range
-	Foot       		Foot
-	Rating     		Range
-	Price      		Range
+	Position     []string
+	PositionType string
+	Accelerate   string
+	NationID     int
+	LeagueID     int
+	ClubID       int
+	Height       string
+	Weight       string
+	WeakFoot     Range
+	Skills       Range
+	Foot         Foot
+	Rating       Range
+	Price        Range
 
 	Pace             Range
 	Acceleration     Range

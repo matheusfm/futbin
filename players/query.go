@@ -11,25 +11,25 @@ type playerQuery struct {
 
 	Version string `url:"version,omitempty"`
 
-	Position    	[]string `url:"position,comma,omitempty"`
-	PositionType 	string 	 `url:"pos_type,comma,omitempty"`
-	Accelerate  	string   `url:"accelerate,omitempty"`
-	NationID    	int      `url:"nation,omitempty"`
-	LeagueID    	int      `url:"league,omitempty"`
-	ClubID      	int      `url:"club,omitempty"`
-	WeakFoot    	int      `url:"wf,omitempty"`
-	MinWeakFoot 	int      `url:"min_wf,omitempty"`
-	MaxWeakFoot 	int      `url:"max_wf,omitempty"`
-	Skills      	int      `url:"skills,omitempty"`
-	MinSkills   	int      `url:"min_skills,omitempty"`
-	MaxSkills   	int      `url:"max_skills,omitempty"`
-	Foot        	Foot     `url:"foot,omitempty"`
-	PsPrice     	string   `url:"ps4price,omitempty"`
-	XboxPrice   	string   `url:"xb1price,omitempty"`
-	PcPrice     	string   `url:"pcprice,omitempty"`
-	Rating      	string   `url:"rating,omitempty"`
-	Height      	string   `url:"height,omitempty"`
-	Weight      	string   `url:"weight,omitempty"`
+	Position     []string `url:"position,comma,omitempty"`
+	PositionType string   `url:"pos_type,comma,omitempty"`
+	Accelerate   string   `url:"accelerate,omitempty"`
+	NationID     int      `url:"nation,omitempty"`
+	LeagueID     int      `url:"league,omitempty"`
+	ClubID       int      `url:"club,omitempty"`
+	WeakFoot     int      `url:"wf,omitempty"`
+	MinWeakFoot  int      `url:"min_wf,omitempty"`
+	MaxWeakFoot  int      `url:"max_wf,omitempty"`
+	Skills       int      `url:"skills,omitempty"`
+	MinSkills    int      `url:"min_skills,omitempty"`
+	MaxSkills    int      `url:"max_skills,omitempty"`
+	Foot         Foot     `url:"foot,omitempty"`
+	PsPrice      string   `url:"ps4price,omitempty"`
+	XboxPrice    string   `url:"xb1price,omitempty"`
+	PcPrice      string   `url:"pcprice,omitempty"`
+	Rating       string   `url:"rating,omitempty"`
+	Height       string   `url:"height,omitempty"`
+	Weight       string   `url:"weight,omitempty"`
 
 	Pace             string `url:"Pace,omitempty"`
 	Acceleration     string `url:"Acceleration,omitempty"`
@@ -70,25 +70,25 @@ type playerQuery struct {
 func newPlayerQuery(opt *Options) *playerQuery {
 	price := rangeString(opt.Price, "-", 200, 15000000)
 	pq := &playerQuery{
-		Platform:    opt.Platform,
-		Page:        opt.Page,
-		Sort:        opt.Sort,
-		Order:       opt.Order,
-		Version:     opt.Version,
-		Position:    opt.Position,
+		Platform:     opt.Platform,
+		Page:         opt.Page,
+		Sort:         opt.Sort,
+		Order:        opt.Order,
+		Version:      opt.Version,
+		Position:     opt.Position,
 		PositionType: opt.PositionType,
-		Accelerate:  opt.Accelerate,
-		NationID:    opt.NationID,
-		LeagueID:    opt.LeagueID,
-		ClubID:      opt.ClubID,
-		MinWeakFoot: opt.WeakFoot.Min,
-		MaxWeakFoot: opt.WeakFoot.Max,
-		MinSkills:   opt.Skills.Min,
-		MaxSkills:   opt.Skills.Max,
-		Foot:        opt.Foot,
-		Rating:      rangeString(opt.Rating, "-", 30, 99),
-		Height:      opt.Height,
-		Weight:      opt.Weight,
+		Accelerate:   opt.Accelerate,
+		NationID:     opt.NationID,
+		LeagueID:     opt.LeagueID,
+		ClubID:       opt.ClubID,
+		MinWeakFoot:  opt.WeakFoot.Min,
+		MaxWeakFoot:  opt.WeakFoot.Max,
+		MinSkills:    opt.Skills.Min,
+		MaxSkills:    opt.Skills.Max,
+		Foot:         opt.Foot,
+		Rating:       rangeString(opt.Rating, "-", 30, 99),
+		Height:       opt.Height,
+		Weight:       opt.Weight,
 
 		Pace:             rangeString(opt.Pace, ",", 0, 99),
 		Acceleration:     rangeString(opt.Acceleration, ",", 0, 99),

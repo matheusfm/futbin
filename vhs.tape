@@ -11,20 +11,20 @@ Sleep 1.5s
 Type "futbin players --nation 54"
 Enter
 
-Sleep 1.5s
-Type@500ms "futbin players --nation 54 --skills 5"
+Sleep 2s
+Type "futbin players --nation 54 --skills 5"
 Enter
 
-Sleep 1.5s
-Type@500ms "futbin players --nation 54 --skills 5 --price -1000000"
+Sleep 2.5s
+Type "futbin players --nation 54 --skills 5 --price -1000000"
 Enter
 
-Sleep 1.5s
-Type@500ms "futbin players --nation 54 --skills 5 --price -1000000 --wf 4-"
+Sleep 2.5s
+Type "futbin players --nation 54 --skills 5 --price -1000000 --wf 4-"
 Enter
 
-Sleep 1.5s
-Type@500ms "futbin players --nation 54 --skills 5 --price -1000000 --wf 4- --pace 87-90"
+Sleep 2.5s
+Type "futbin players --nation 54 --skills 5 --price -1000000 --wf 4- --pace 87-90"
 Enter
 
 Sleep 2s

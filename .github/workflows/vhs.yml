@@ -15,6 +15,7 @@ jobs:
       - name: install futbin
         run: |
           curl -sSfL https://raw.githubusercontent.com/matheusfm/futbin/main/install.sh | sh -s -- -b $HOME/.local/bin
+          futbin --help
 
       - name: vhs
         uses: charmbracelet/vhs-action@v1

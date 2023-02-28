@@ -5,11 +5,22 @@ An unofficial command line utility for [futbin](https://www.futbin.com/). Also, 
 
 # Install
 
-## Pre-compiled executables
+## Pre-compiled binaries
 
-Get them [here](https://github.com/matheusfm/futbin/releases).
+1. Download the file for your system/architecture from the [GitHub releases assets](https://github.com/matheusfm/futbin/releases)
+2. Unpack the downloaded archive (e.g `tar -xzf futbin_0.3.2_Linux_x86_64.tar.gz`)
+3. Make sure the binary has execution bit turned on (`chmod +x ./futbin`)
+4. Move the binary somewhere in your `$PATH` (e.g `mv ./futbin $HOME/.local/bin`)
 
-## Source
+## Install script
+
+The process above can be automated by the following script:
+
+```shell
+curl -sSfL https://raw.githubusercontent.com/matheusfm/futbin/main/install.sh | sh -s -- -b $HOME/.local/bin
+```
+
+## From source
 
 You need `go` installed and `GOBIN` in your `PATH`. Once that is done, run the command:
 

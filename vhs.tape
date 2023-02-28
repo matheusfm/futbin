@@ -1,7 +1,8 @@
-Output vhs.gif
+Output demo.gif
 Set FontSize 20
 Set Width 1920
-Set Height 1080
+Set Height 1200
+Set Padding 5
 
 Sleep 1s
 Type "futbin nations | grep -i braz"

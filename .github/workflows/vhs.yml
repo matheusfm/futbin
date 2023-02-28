@@ -6,6 +6,8 @@ on:
 jobs:
   vhs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: checkout
         uses: actions/checkout@v3

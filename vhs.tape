@@ -1,8 +1,8 @@
 Output demo.gif
-Set FontSize 20
+Set FontSize 10
 Set Width 1920
-Set Height 1200
-Set Padding 5
+Set Height 1400
+Set Padding 10
 
 Sleep 1s
 Type "futbin nations | grep -i braz"

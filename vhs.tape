@@ -1,3 +1,5 @@
+Output vhs.gif
+
 Sleep 1s
 Type "futbin nations | grep -i braz"
 Enter

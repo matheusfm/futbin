@@ -1,7 +1,7 @@
 Output demo.gif
-Set FontSize 15
+Set FontSize 20
 Set Width 1920
-Set Height 800
+Set Height 1080
 Set Padding 10
 
 Sleep 1s

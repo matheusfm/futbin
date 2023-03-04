@@ -1,5 +1,10 @@
 # futbin
 [![goreleaser](https://github.com/matheusfm/futbin/actions/workflows/release.yml/badge.svg)](https://github.com/matheusfm/futbin/actions/workflows/release.yml)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/matheusfm/futbin)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/matheusfm/futbin)
+[![Go Report Card](https://goreportcard.com/badge/github.com/matheusfm/futbin)](https://goreportcard.com/report/github.com/matheusfm/futbin)
+![GitHub](https://img.shields.io/github/license/matheusfm/futbin)
+![GitHub all releases](https://img.shields.io/github/downloads/matheusfm/futbin/total)
 
 An unofficial command line utility for [futbin](https://www.futbin.com/). Also, it can be used as a library.
 

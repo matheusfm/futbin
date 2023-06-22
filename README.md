@@ -1,4 +1,5 @@
 # futbin
+[![Go Reference](https://pkg.go.dev/badge/github.com/matheusfm/futbin.svg)](https://pkg.go.dev/github.com/matheusfm/futbin)
 [![goreleaser](https://github.com/matheusfm/futbin/actions/workflows/release.yml/badge.svg)](https://github.com/matheusfm/futbin/actions/workflows/release.yml)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/matheusfm/futbin)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/matheusfm/futbin)
@@ -6,28 +7,26 @@
 ![GitHub](https://img.shields.io/github/license/matheusfm/futbin)
 ![GitHub all releases](https://img.shields.io/github/downloads/matheusfm/futbin/total)
 
-An unofficial command line utility for [futbin](https://www.futbin.com/). Also, it can be used as a library.
+An unofficial command-line tool for [futbin](https://www.futbin.com/). Also, it can be used as a library.
 
 # Install
 
 ## Pre-compiled binaries
 
 1. Download the file for your system/architecture from the [GitHub releases assets](https://github.com/matheusfm/futbin/releases)
-2. Unpack the downloaded archive (e.g `tar -xzf futbin_0.3.2_Linux_x86_64.tar.gz`)
-3. Make sure the binary has execution bit turned on (`chmod +x ./futbin`)
+2. Unpack the downloaded archive (e.g `tar -xzf futbin_Linux_x86_64.tar.gz`)
+3. Ensure that the binary has execution permissions (`chmod +x ./futbin`)
 4. Move the binary somewhere in your `$PATH` (e.g `mv ./futbin $HOME/.local/bin`)
 
 ## Install script
 
-The process above can be automated by the following script:
+The installation process can be automated using the following script:
 
 ```shell
 curl -sSfL https://raw.githubusercontent.com/matheusfm/futbin/main/install.sh | sh -s -- -b $HOME/.local/bin
 ```
 
 ## From source
-
-You need `go` installed and `GOBIN` in your `PATH`. Once that is done, run the command:
 
 ```shell
 go install github.com/matheusfm/futbin@latest
@@ -135,7 +134,17 @@ Global Flags:
       --platform string   Platform (PS, XB or PC) (default "PS")
 ```
 
-## Usage (Library)
+## Docker
+
+You can also run futbin using Docker:
+
+```shell
+docker run --rm --name futbin ghcr.io/matheusfm/futbin players
+```
+
+## Library Usage
+
+If you want to use Futbin as a library in your Go program, you can use the following code snippet as an example:
 
 ```go
 package main
